@@ -23,7 +23,7 @@
 6. Run `so-status` on the current Heavy Forwarder or Master to verify Logstash **OK** status
 
 ## References:<br />
-*Logstash Minimal mode documentation: https://docs.securityonion.net/en/16.04/logstash.html?logstash-minimal*
+*Logstash Minimal mode documentation: https://docs.securityonion.net/en/16.04/logstash.html?logstash-minimal*<br />
 *HTTP Event Collector Loagstash Example: https://discuss.elastic.co/t/logstash-to-splunk-http-event-collector/130765/6*<br />
 *Logstash Adding New Logs: https://docs.securityonion.net/en/16.04/logstash.html?#parsing*<br />
 <br /><br />
