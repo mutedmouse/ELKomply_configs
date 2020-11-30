@@ -1,0 +1,36 @@
+filter {
+	mutate {
+		rename => { "message" => "original_message" }
+	}
+}
+
+filter {
+	json {
+		source => "original_message"
+	}
+}
+
+filter {
+	ruby { code => "event.set('time', event.get('@timestamp').to_f)" }
+}
+
+filter {
+	mutate {
+		remove_field => ["original_message"]
+		rename => { "source" => "log_source" }
+		rename => { "sourcetype" => "log_sourcetype" }
+		rename => { "host" => "log_host" }
+	}
+}
+
+output {
+	if [module] =~ "zeek" or [module] =~ "suricata" and "import" not in [tags] {
+		http {
+			format => "json"
+			content_type => "application/json"
+			http_method => "post"
+			url => "http://<splunk_ip>:8088/services/collector/raw"
+			headers => ['Authorization', 'Splunk eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee']      
+		}
+	}
+}
