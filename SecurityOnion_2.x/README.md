@@ -1,7 +1,7 @@
 # SecurityOnion 2.x ELKomply Guide
 #### Caveats and Concerns
 * Splunk receiving system **MUST** be operational **BEFORE** making configurations to Security Onion 2.x<br />
-* Systems executing logstash **MUST** be able to reach Splunk or Logstash will not send **ANY** logs
+* Systems executing logstash **MUST** be able to reach Splunk, otherwise Logstash will not send **ANY** logs
     - This applies to logs destined for Elasticsearch AND Splunk and is due to the infinite retry mechanism in logstash
     - This caveat only applies once logstash pipelines have been applied
 <br />
