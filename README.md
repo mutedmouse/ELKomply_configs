@@ -1,7 +1,7 @@
 # ELKomply_configs
 Configs for usage with ELKomply Splunk App
 
-##Supported Platforms
+## Supported Platforms
 * Security Onion 2.x
 * Security Onion 16.x
 * HELK
